@@ -1,4 +1,4 @@
-function getTodos(url) {
+function getItems(url) {
     return fetch(url)
         .then((res) => res.json())
         .then((result) => {
@@ -9,7 +9,7 @@ function getTodos(url) {
         });
 }
 
-function getTodo(url,id) {
+function getItem(url,id) {
     return fetch(`${url}?id=${id}`)
         .then((res) => res.json())
         .then((result) => {
@@ -20,7 +20,7 @@ function getTodo(url,id) {
         });
 }
 
-function addTodo(url,data) {
+function addItem(url,data) {
     return fetch(url, {
             method: "POST",
             headers: {
@@ -37,7 +37,7 @@ function addTodo(url,data) {
         });
 }
 
-function editTodo(url,data, id) {
+function editItem(url,data, id) {
     return fetch(`${url}/${id}`, {
             method: "PUT",
             headers: {
@@ -54,7 +54,7 @@ function editTodo(url,data, id) {
         });
 }
 
-function deleteTodo(url,id) {
+function deleteItem(url,id) {
     return fetch(`${url}/${id}`, {
             method: "DELETE",
         })
@@ -71,4 +71,4 @@ function deleteTodo(url,id) {
         });
 }
 
-export { addTodo, getTodos, editTodo, deleteTodo, getTodo };
+export { addItem, getItems, editItem, deleteItem, getItem };
